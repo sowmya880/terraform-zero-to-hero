@@ -118,7 +118,7 @@ log.info("=== Basic Info ===")
 log.info("Name: ${name}")
 log.info("Age: ${age}")
 
-if (age > 25) 
+if (age > 28) 
 {
 
     log.info("You are an experienced learner!")
