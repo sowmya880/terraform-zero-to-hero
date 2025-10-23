@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="cea85bfd-7759-4477-a8f5-56182053b605" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Test Case 1" searchProperties="true" timeout="0">
+  <con:settings>
+    <con:setting id="cea85bfd-7759-4477-a8f5-56182053b605fileName">Test-Case-1</con:setting>
+  </con:settings>
+  <con:testStep type="groovy" name="Groovy Script-1" id="a75132b5-dc70-4965-8a10-f7e7fc2f4170">
+    <con:settings/>
+    <con:config>
+      <script><![CDATA[
+
+
+
+
+
+def age = 28
+
+// If-else ladder for age categories
+if (age < 13) {
+    log.info("You are a child.")
+} else if (age >= 13 && age <= 19) {
+    log.info("You are a teenager.")
+} else if (age >= 20 && age <= 29) {
+    log.info("You are a young adult.")
+} else if (age >= 30 && age <= 59) {
+    log.info("You are an adult.")
+} 
+
+else {
+    log.info("You are a senior learner.")
+}
+
+
+4. Loop with log.info =========
+
+
+
+
+// Find least value in an array (Groovy)
+
+// Example array
+def arr = [10, 3, 7, 1, 9]
+
+if (arr == null || arr.isEmpty()) {
+    log.warn("Array khali hai — minimum value nahi milega.")
+} 
+
+
+else
+ {
+    // 1) Built-in simple way
+    def least = arr.min()
+    log.info("Least value (using min): ${least}")
+
+    // 2) Manual way (loop) — useful jab custom comparison chahiye ho
+    def leastManual = arr[0] # 10
+    arr.each { v ->
+        if (v < leastManual) {
+            leastManual = v
+        }
+    }
+    log.info("Least value (manual): ${leastManual}")
+}
+
+
+// Utility: find minimum in a list (returns null and logs if list is null/empty)
+def findMin(List arr) {
+    if (arr == null || arr.isEmpty()) {
+        log.warn("Array khali hai — minimum value nahi milega.")
+        return null
+    }
+    return arr.min()
+}
+
+// Manual implementation (useful for custom logic)
+def findMinManual(List arr) {
+    if (arr == null || arr.isEmpty()) {
+        log.warn("Array khali hai — minimum value nahi milega.")
+        return null
+    }
+    def minVal = arr[0]
+    arr.each { v -> if (v < minVal) minVal = v }
+    return minVal
+}
+
+// Usage example
+def sample = [10, 3, 7, 1, 9]
+def least = findMin(sample)
+log.info("Least value (findMin): ${least}")
+
+def least2 = findMinManual(sample)
+log.info("Least value (findMinManual): ${least2}")
+// ...existing code...]]></script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="lecture1" id="48587fd4-2073-49ac-87d5-d032d58a02ca">
+    <con:settings/>
+    <con:config>
+      <script>def  print_log()
+{
+//1. Print ===============
+log.info("Hello Groovy!")
+//2. Details Print =============
+log.info("This is an INFO message")    // for normal updates
+log.warn("This is a WARNING message")  // for potential issues
+log.error("This is an ERROR message")  // for errors
+}
+//print_log()
+
+def age_fir()
+
+{
+//	3. Basic Groovy Script (with log.info)=======
+
+def name = "Rishikesh"
+def age = 28
+
+log.info("=== Basic Info ===")
+log.info("Name: ${name}")
+log.info("Age: ${age}")
+
+if (age > 25) 
+{
+
+    log.info("You are an experienced learner!")
+} 
+
+else {
+    log.warn("You are quite young, keep learning!")
+}
+
+}
+
+//
+
+
+def loop_at()
+{
+	def numbers = [10, 20, 30, 40]
+
+//l=[1,2,3]
+//for i in l:
+
+numbers.each { num ->
+    log.info("Number: ${num}")
+}
+}
+loop_at()
+</script>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>
